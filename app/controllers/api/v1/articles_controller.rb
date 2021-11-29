@@ -3,7 +3,7 @@ class Api::V1::ArticlesController <ApplicationController
     before_action :set_article, only: [:show, :update, :destroy]
     #skip_before_action :verify_autenticity_token
     def index
-        @articles = Article.all
+        @articles = Article.paginate(page: params[:page] || 1, per_page: 3)
         @articles = @articles.map{|article| article.format_json}
         render json: @articles.to_json, status: 200
     end
@@ -17,7 +17,7 @@ class Api::V1::ArticlesController <ApplicationController
     def create
         @article = Article.new(article_params)
         if @article.save
-        render json: @article, status: :created, location: api_v1_articles_url(@article)
+        render json: @article, status: :created, location: api_v1_articles(@article)
         else
         render json: @article.errors, status: :unprocessable_entity
         end
