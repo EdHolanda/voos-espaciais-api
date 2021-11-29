@@ -17,18 +17,18 @@ class Api::V1::ArticlesController <ApplicationController
     def create
         @article = Article.new(article_params)
         if @article.save
-        render json: @article, status: :created, location: api_v1_articles_url(@article)
+            render json: @article, status: :created, location: api_v1_articles_url(@article)
         else
-        render json: @article.errors, status: :unprocessable_entity
+            render json: @article.errors, status: :unprocessable_entity
         end
     end
 
     # PATCH/PUT /articles/1
     def update
         if @article.update(article_params)
-        render json: @article, location: api_v1_articles_url(@article)
+            render json: @article, location: api_v1_articles_url(@article)
         else
-        render json: @article.errors, status: :unprocessable_entity
+            render json: @article.errors, status: :unprocessable_entity
         end
     end
 
