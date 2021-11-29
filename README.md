@@ -37,7 +37,7 @@ This is a challenge by Coodesh
 
 * Criação do arquivo jobs.rake com script para popular as tabelas com os dados oriundos da API original do Space Flight News
 
-* Deployment instructions
+* Link do video da apresentação: https://loom.com/share/6b79b7c85fcf414582c923213e1fd5ba
 
 
 
