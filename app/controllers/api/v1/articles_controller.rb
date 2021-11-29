@@ -25,8 +25,8 @@ class Api::V1::ArticlesController <ApplicationController
 
     # PATCH/PUT /articles/1
     def update
-        if @article.update(articles_params)
-        render json: @article
+        if @article.update(article_params)
+        render json: @article, location: api_v1_articles_url(@article)
         else
         render json: @article.errors, status: :unprocessable_entity
         end
