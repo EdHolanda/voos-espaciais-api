@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_214527) do
+ActiveRecord::Schema.define(version: 2021_11_29_004544) do
 
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.boolean "featured"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_11_28_214527) do
     t.string "url"
     t.string "imageUrl"
     t.string "newsSite"
-    t.string "summary"
+    t.text "summary"
     t.string "publishedAt"
     t.string "updatedAt"
     t.datetime "created_at", precision: 6, null: false
