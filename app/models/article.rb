@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   
   def format_json 
     {
+      :id => self.id_orig,
       :title => self.title,
       :url => self.url,
       :imageurl => self.imageUrl,
@@ -11,8 +12,10 @@ class Article < ApplicationRecord
       :summary => self.summary,
       :publishedat => self.publishedAt,
       :updatedat => self.updatedAt,
-      :launches => self.launches,
-      :events => self.events
+      :featured => self.featured
+      #:launches => self.launches,
+      #:events => self.events
     }
   end
+
 end

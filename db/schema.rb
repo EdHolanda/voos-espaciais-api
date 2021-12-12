@@ -13,12 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_11_29_004544) do
 
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.boolean "featured"
+    t.bigint "id_orig"
     t.string "title"
     t.string "url"
     t.string "imageUrl"
     t.string "newsSite"
     t.text "summary"
+    t.boolean "featured"
     t.string "publishedAt"
     t.string "updatedAt"
     t.datetime "created_at", precision: 6, null: false
