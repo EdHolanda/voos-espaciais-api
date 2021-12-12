@@ -18,4 +18,9 @@ class Article < ApplicationRecord
     }
   end
 
+  def self.buscar_por_id(id)
+    @id_article = ActiveRecord::Base.connection.exec_query("select * from articles where id_orig=#{id}")
+    return @id_article.map{|a| Article.new(a)}.first
+  end
+
 end

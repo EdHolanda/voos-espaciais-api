@@ -32,10 +32,14 @@ class Api::V1::ArticlesController <ApplicationController
         end
     end
 
-    # DELETE /articless/1
+    # DELETE /articles/1
     def destroy
         @article.destroy
     end
+
+    # def busca
+    #     where(id_orig:"id_orig")
+    # end
 
     private
     # Use callbacks to share common setup or constraints between actions.
@@ -47,6 +51,8 @@ class Api::V1::ArticlesController <ApplicationController
     def article_params
         params.permit(:title,:url,:imageUrl,:newsSite,:summary,:publishedAt,:updatedAt,:launches,:events)
     end
+
+
     
 end
 
